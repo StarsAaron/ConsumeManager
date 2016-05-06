@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fc8080">
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expL_history"
+        android:layout_gravity="center_horizontal"
+        android:childDivider="@null"
+        android:divider="@null"
+        android:cacheColorHint="#00000000"
+        android:listSelector="#00000000"
+        />
+
+</FrameLayout>

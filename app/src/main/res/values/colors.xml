@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titlebar_bg">#0b9af9</color>
+    <color name="line">#e7e7e7</color>
+    <color name="whilte">#ffffff</color>
+    <color name="setting_text">#4db5f9</color>
+    <color name="green">#44c7b4</color>
+    <color name="orange">#f1ae5c</color>
+    <color name="red">#f89595</color>
+    <color name="red2">#fc8080</color>
+</resources>

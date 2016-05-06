@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/fl_savepage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:orientation="vertical"
+            android:id="@+id/ll_save_date"
+            android:focusable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/view_border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间："
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/et_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:singleLine="true"
+                    android:textColor="@color/green"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_onclick_bg"
+                    android:text="日历"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btn_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_onclick_bg"
+                    android:text="今天"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/view_border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额："
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/et_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:singleLine="true"
+                    android:textColor="@color/green"
+                    android:textSize="20dp"
+                    android:hint="只能保留到小数点后两位"
+                    android:textColorHint="#be93cffc"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/view_border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="描述："
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:gravity="top|left"
+                    android:maxHeight="200dp"
+                    android:minHeight="100dp"
+                    android:textColor="@color/green"
+                    android:textSize="20dp" />
+                <LinearLayout
+                    android:id="@+id/ll_voiceplay_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/globle_player_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_voiceplay_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/globle_player_btn_play" />
+
+                    <ProgressBar
+                        android:id="@+id/prb_voiceplay_bar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dip"
+                        android:layout_margin="8dip"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/globle_player_progress_bar_bg" />
+
+                    <TextView
+                        android:id="@+id/tv_voiceplay_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7″"
+                        android:textColor="#999999"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_delete_voice"
+                        android:background="@mipmap/ic_remove"
+                        android:layout_marginLeft="10dp"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/fl_diaplay_voice_icon"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/imageView"
+                        android:layout_gravity="center_horizontal|top"
+                        android:background="@mipmap/voice_ugc_icon_recording"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_voice_size"
+                        android:layout_gravity="center"
+                        android:background="@drawable/voice_ugc_icon_recordingvolume"/>
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/imageView3"
+                        android:layout_gravity="center"
+                        android:background="@mipmap/voice_ugc_icon_recording_ring"
+                        android:visibility="visible"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="7&apos;&apos;"
+                    android:id="@+id/tv_record_time"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="按着说话"
+                    android:id="@+id/btn_record_voice"
+                    android:background="@drawable/globle_player_bg"
+                    android:textColor="#bfbfbf"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rbg_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checkedButton="0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_consume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:padding="10dp"
+                        android:text="支出"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:checked="false"
+                        android:padding="10dp"
+                        android:text="收入"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_onclick_bg"
+                android:text="保存"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_delete_bg"
+                android:text="删除"
+                android:textColor="#f95858"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

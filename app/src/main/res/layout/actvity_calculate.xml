@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fl_calcu_page">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/orange">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="时间范围"
+        android:id="@+id/textView4"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/view_border"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="从："
+            android:id="@+id/textView8"
+            android:textColor="@color/orange"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/et_fromdate"
+            android:layout_weight="1"
+            android:background="@drawable/view_border2"
+            android:textColor="@color/orange"
+            android:hint="格式：2015-11-11"
+            android:textColorHint="#dddada"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/orange"/>
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:id="@+id/iv_fromdate_calcendar"
+            android:layout_gravity="center_vertical|right"
+            android:background="@mipmap/ic_calendar"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/view_border"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="到："
+            android:id="@+id/textView9"
+            android:textColor="@color/orange"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/view_border2"
+            android:textColor="@color/orange"
+            android:id="@+id/et_todate"
+            android:singleLine="true"
+            android:textColorHint="#dddada"
+            android:paddingLeft="10dp"
+            android:hint="格式：2015-11-12" />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/orange"/>
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center|right"
+            android:background="@mipmap/ic_calendar"
+            android:id="@+id/iv_todate_calcendar"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="计算"
+        android:id="@+id/btn_calcu"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_onclick_bg"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="统计结果："
+        android:id="@+id/textView7"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff" />
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="支出："
+        android:id="@+id/tv_result"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/view_border"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/orange" />
+
+    </LinearLayout>
+</FrameLayout>
