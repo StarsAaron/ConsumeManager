@@ -46,7 +46,7 @@ import java.util.UUID;
  */
 public class SaveRecordActivity extends BaseHeadActivity implements View.OnClickListener,CalendarFragment.ChooseDateListener {
     private Myapplication myapplication;
-    private Button btn_calendar,btn_today,btn_save,btn_delete,btn_record_voice;
+    private Button btn_calendar,btn_today,btn_save,btn_delete;
     private EditText et_time,et_money,et_description;
     private RadioButton rb_consume,rb_income;
     private RadioGroup rbg_choose;
@@ -171,7 +171,6 @@ public class SaveRecordActivity extends BaseHeadActivity implements View.OnClick
         btn_today = (Button)findViewById(R.id.btn_today);
         btn_save = (Button)findViewById(R.id.btn_save);
         btn_delete = (Button)findViewById(R.id.btn_delete);
-        btn_record_voice = (Button)findViewById(R.id.btn_record_voice);
         et_time = (EditText)findViewById(R.id.et_time);
         et_money = (EditText)findViewById(R.id.et_money);
         et_description = (EditText)findViewById(R.id.et_description);
@@ -181,15 +180,6 @@ public class SaveRecordActivity extends BaseHeadActivity implements View.OnClick
         ll_save_date = (LinearLayout)findViewById(R.id.ll_save_date);
         fl_savepage = (FrameLayout)findViewById(R.id.fl_savepage);
 
-        tv_record_time = (TextView)findViewById(R.id.tv_record_time);
-        iv_voice_size = (ImageView) findViewById(R.id.iv_voice_size);
-        fl_diaplay_voice_icon = (FrameLayout) findViewById(R.id.fl_diaplay_voice_icon);
-
-        iv_voiceplay_btn = (ImageView)findViewById(R.id.iv_voiceplay_btn);
-        prb_voiceplay_bar = (ProgressBar)findViewById(R.id.prb_voiceplay_bar);
-        tv_voiceplay_time = (TextView)findViewById(R.id.tv_voiceplay_time);
-        iv_delete_voice = (ImageView)findViewById(R.id.iv_delete_voice);
-        ll_voiceplay_bar = (LinearLayout)findViewById(R.id.ll_voiceplay_bar);
     }
 
     private void initView() {
@@ -219,84 +209,6 @@ public class SaveRecordActivity extends BaseHeadActivity implements View.OnClick
                         chooseConsume = "收入";
                     break;
                 }
-            }
-        });
-
-        //按着录音点击事件处理
-        btn_record_voice.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){ //按下
-//                    if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-                        showRecordBar(View.VISIBLE);//显示录音图标
-//                        // 修改录音状态
-//                        mRecord_State = RECORD_ING;
-//                        voive_directory = File.separator + "consumemanager_voice_record"
-//                                + File.separator + UUID.randomUUID().toString()+".amr";
-//                        voice_save_path = Environment.getExternalStorageDirectory() + voive_directory;
-//                        // 实例化录音工具类
-//                        mRecordUtil = new RecordUtil(voice_save_path);
-//                        try {
-//                            // 开始录音
-//                            mRecordUtil.start();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                        new Thread(new Runnable() {
-//                            public void run() {
-//                                // 初始化录音时间
-//                                mRecord_Time = 0;
-//                                while (mRecord_State == RECORD_ING) {
-//                                    try {
-//                                        // 每隔200毫秒就获取声音音量并更新界面显示
-//                                        Thread.sleep(200);
-//                                        mRecord_Time += 0.2;
-//                                        if (mRecord_State == RECORD_ING) {
-//                                            mRecord_Volume = mRecordUtil.getAmplitude();
-//                                            handler.sendEmptyMessage(0);
-//                                        }
-//                                    } catch (InterruptedException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                }
-//                            }
-//                        }).start();
-//                    }else{
-//                        Toast.makeText(SaveRecordActivity.this,"手机内存没挂载",Toast.LENGTH_SHORT).show();
-//                    }
-
-//                }
-//                if(event.getAction() == MotionEvent.ACTION_UP){ //抬起
-//                    try {
-//                        // 停止录音
-//                        mRecordUtil.stop();
-//                        // 初始录音音量
-//                        mRecord_Volume = 0;
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                    // 如果录音时间小于最短时间
-//                    if (mRecord_Time <= MIN_TIME) {
-//                        // 显示提醒
-//                        Toast.makeText(SaveRecordActivity.this, "录音时间过短", Toast.LENGTH_SHORT).show();
-//                        // 修改录音状态
-//                        mRecord_State = RECORD_NO;
-//                        // 修改录音时间
-//                        mRecord_Time = 0;
-//                        // 修改显示界面
-//                        tv_recordtime.setText("0″");
-//                        // 修改录音声音界面
-//                        ViewGroup.LayoutParams params = voice_recording_volume.getLayoutParams();
-//                        params.height = 0;
-//                        voice_recording_volume.setLayoutParams(params);
-//                    } else {
-//                        // 录音成功,则显示录音成功后的界面
-//                        mDisplayVoiceProgressBar.setMax((int) mRecord_Time);
-//                        mDisplayVoiceProgressBar.setProgress(0);
-//                        mDisplayVoiceTime.setText((int) mRecord_Time + "″");
-//                    }
-                }
-                return true;
             }
         });
     }
